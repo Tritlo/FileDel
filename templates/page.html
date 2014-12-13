@@ -1,0 +1,15 @@
+<body>
+  <ul id="list">
+    {% if toplevel %}
+    {% else %}
+    <li> <a href=".."> .. (Back home) </a> </li>
+    {% endif %}
+        {% for item in list %}
+        {% if item.2 %}
+        <li> <a href="/{{item.0}}"> {{ item.0}} {{item.1}}</a>        <a href="/delete/{{path}}{{item.0}}"> Delete </a></li>
+        {% else %}
+                <li> {{ item.0}} {{item.1}} <a href="/delete/{{path}}{{item.0}}"> Delete </a></li>
+                {% endif%}
+        {% endfor %}
+    </ul>
+</body>
